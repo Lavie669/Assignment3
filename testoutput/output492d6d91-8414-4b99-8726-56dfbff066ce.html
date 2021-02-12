@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Practical vs. Theoretical</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id='target' ></div>
+        <script>
+        var target_target = document.getElementById('target');
+        var layout = {
+    title: 'Practical vs. Theoretical',
+    height: 600,
+    width: 800,
+    showlegend: true,
+    xaxis: {
+    title: 'N',
+    },
+
+    yaxis: {
+    title: 'C',
+    },
+
+};
+
+var trace0 =
+{
+x: ["1","2","4","8","16","32","64","128","256","512","1024","2048","4096"],
+y: ["1.0","3.0","7.0","15.0","31.0","63.0","127.0","255.0","511.0","1023.0","2047.0","4095.0","8191.0"],
+showlegend: true,
+mode: 'lines',
+xaxis: 'x',
+yaxis: 'y',
+type: 'scatter',
+name: 'Practical',
+};
+var trace1 =
+{
+x: ["1","2","4","8","16","32","64","128","256","512","1024","2048","4096"],
+y: ["1.0","3.0","10.0","29.0","61.0","156.0","316.0","636.0","1276.0","2556.0","5116.0","10236.0","20476.0"],
+showlegend: true,
+mode: 'lines',
+xaxis: 'x',
+yaxis: 'y',
+type: 'scatter',
+name: 'Theoretical',
+};
+
+        var data = [ trace0, trace1];
+Plotly.newPlot(target_target, data, layout);            </script>
+
+</body>
+</html>
